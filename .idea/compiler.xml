@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="blogarticle" />
         <module name="blogmanage" />
         <module name="blogcloudcenter" />
         <module name="blogusers" />
@@ -14,6 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="blogarticle" options="-parameters" />
       <module name="blogcloudcenter" options="-parameters" />
       <module name="blogusers" options="-parameters" />
     </option>
