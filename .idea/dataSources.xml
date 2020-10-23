@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/blogmanage?useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="@localhost" uuid="ab584855-c442-40ef-943b-2218c4d01703">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+    </data-source>
   </component>
 </project>

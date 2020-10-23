@@ -1,0 +1,26 @@
+server:
+  port: 8763
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: eureka-articlle
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/blogmanage?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+feign:
+  hystrix:
+    enabled: true
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

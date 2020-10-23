@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/blogarticle/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blogcloudcenter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blogcloudcenter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/blogusers/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blogusers/src/main/resources" charset="UTF-8" />
   </component>
 </project>
