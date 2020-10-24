@@ -23,6 +23,9 @@ public class User {
     @Column(name = "enabled")
     private Integer enabled;
 
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "userface")
     private String userFace;
 

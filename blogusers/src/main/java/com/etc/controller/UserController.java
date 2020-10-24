@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 @CrossOrigin("*")
 @RestController
@@ -15,13 +16,11 @@ public class UserController {
     UserService userService;
 
     @RequestMapping("/validate")
-    public User validate(String username, String password){
+    public User validate(String username, String password, HttpSession session){
         System.out.println("请求成功！！");
-        User login = userService.login(username, password);
-        System.out.println(username);
-        System.out.println(password);
-        System.out.println(login);
-        return userService.login(username,password);
+        User user = userService.login(username, password);
+        session.setAttribute("user",user);
+        return user;
     }
 
 }
