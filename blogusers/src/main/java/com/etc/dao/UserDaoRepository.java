@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.io.Serializable;
 
 public interface UserDaoRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User>, Serializable {
+    User findUserByUserNameAndPassword(String username,String password);
 }
