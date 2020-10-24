@@ -9,8 +9,9 @@ eureka:
 
 spring:
   application:
-    name: eureka-microservice-users # 当前应用的名称.用于注册到Eureka Server 以后的服务与服务之间相互调用一般都是根据这个name
+    name: eureka-users # 当前应用的名称.用于注册到Eureka Server 以后的服务与服务之间相互调用一般都是根据这个name
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: 123456
     url: jdbc:mysql://127.0.0.1:3306/blogmanage?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
