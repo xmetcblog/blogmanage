@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
+import javax.servlet.http.HttpSession;
 
 @CrossOrigin("*")
 @RestController
@@ -23,10 +24,11 @@ public class UserController {
     ArticleFeign articleFeign;
 
     @RequestMapping("/validate")
-    public User validate(String username, String password){
+    public User validate(String username, String password, HttpSession session){
         System.out.println("请求成功！！");
-        User login = userService.login(username, password);
-        return userService.login(username,password);
+        User user = userService.login(username, password);
+        session.setAttribute("user",user);
+        return user;
     }
 
     @RequestMapping("/getUserAndArticle")
