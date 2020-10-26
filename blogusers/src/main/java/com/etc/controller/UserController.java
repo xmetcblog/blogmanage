@@ -5,14 +5,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.etc.entity.User;
 import com.etc.feign.ArticleFeign;
 import com.etc.service.UserService;
-import jdk.nashorn.internal.scripts.JS;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
-import javax.servlet.http.HttpSession;
 
 @CrossOrigin("*")
 @RestController

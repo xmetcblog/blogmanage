@@ -11,7 +11,7 @@
  Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 22/10/2020 09:43:48
+ Date: 26/10/2020 19:27:37
 */
 
 SET NAMES utf8mb4;
@@ -112,39 +112,6 @@ INSERT INTO `comments` VALUES (2, 108, '35443', '2020-10-21 09:07:03', NULL, 7);
 INSERT INTO `comments` VALUES (3, 108, '3545343', '2020-10-21 09:07:20', 1, 7);
 
 -- ----------------------------
--- Table structure for roles
--- ----------------------------
-DROP TABLE IF EXISTS `roles`;
-CREATE TABLE `roles`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of roles
--- ----------------------------
-
--- ----------------------------
--- Table structure for roles_user
--- ----------------------------
-DROP TABLE IF EXISTS `roles_user`;
-CREATE TABLE `roles_user`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `rid` int(11) NULL DEFAULT NULL,
-  `uid` int(11) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`) USING BTREE,
-  INDEX `rid`(`rid`) USING BTREE,
-  INDEX `uid`(`uid`) USING BTREE,
-  CONSTRAINT `roles_user_ibfk_1` FOREIGN KEY (`rid`) REFERENCES `roles` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `roles_user_ibfk_2` FOREIGN KEY (`uid`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of roles_user
--- ----------------------------
-
--- ----------------------------
 -- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
@@ -157,22 +124,23 @@ CREATE TABLE `user`  (
   `email` varchar(64) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `userface` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `regTime` datetime(0) NULL DEFAULT NULL,
+  `role` tinyint(4) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (6, 'linghu', '令狐葱', '123', 1, 'linghu@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-08 09:30:22');
-INSERT INTO `user` VALUES (7, 'sang', '江南一点雨', '123', 1, 'sang123@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-21 13:30:29');
-INSERT INTO `user` VALUES (10, 'qiaofeng', '乔峰', '123', 1, 'qiaofeng@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
-INSERT INTO `user` VALUES (13, 'duanzhengchun', '段正淳', '123', 0, 'duanzhengchun@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
-INSERT INTO `user` VALUES (14, 'chenjialuo', '陈家洛', '123', 0, 'chenjialuo@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
-INSERT INTO `user` VALUES (15, 'yuanchengzhi', '袁承志', '123', 1, 'yuanchengzhi@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
-INSERT INTO `user` VALUES (16, 'chuliuxiang', '楚留香', '123', 1, 'chuliuxiang@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
-INSERT INTO `user` VALUES (17, 'baizhantang', '白展堂', '123', 0, 'baizhantang@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
-INSERT INTO `user` VALUES (18, 'renwoxing', '任我行', '123', 1, 'renwoxing@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
-INSERT INTO `user` VALUES (19, 'zuolengchan', '左冷禅', '123', 1, 'zuolengchan@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
-INSERT INTO `user` VALUES (20, 'fengqingyang', '风清扬', '123', 1, 'fengqingyang@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46');
+INSERT INTO `user` VALUES (6, 'linghu', '令狐葱', '123', 1, 'linghu@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-08 09:30:22', 0);
+INSERT INTO `user` VALUES (7, 'sang', '江南一点雨', '123', 1, 'sang123@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-21 13:30:29', 0);
+INSERT INTO `user` VALUES (10, 'qiaofeng', '乔峰', '123', 1, 'qiaofeng@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 0);
+INSERT INTO `user` VALUES (13, 'duanzhengchun', '段正淳', '123', 0, 'duanzhengchun@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 0);
+INSERT INTO `user` VALUES (14, 'chenjialuo', '陈家洛', '123', 0, 'chenjialuo@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 0);
+INSERT INTO `user` VALUES (15, 'yuanchengzhi', '袁承志', '123', 1, 'yuanchengzhi@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 1);
+INSERT INTO `user` VALUES (16, 'chuliuxiang', '楚留香', '123', 1, 'chuliuxiang@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 1);
+INSERT INTO `user` VALUES (17, 'baizhantang', '白展堂', '123', 0, 'baizhantang@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 1);
+INSERT INTO `user` VALUES (18, 'renwoxing', '任我行', '123', 1, 'renwoxing@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 1);
+INSERT INTO `user` VALUES (19, 'zuolengchan', '左冷禅', '123', 1, 'zuolengchan@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 1);
+INSERT INTO `user` VALUES (20, 'fengqingyang', '风清扬', '123', 1, 'fengqingyang@qq.com', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1603340608762&di=78f31767dc625b016ed1314ce928632b&imgtype=0&src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202008%2F13%2F20200813152423_wCHyn.thumb.400_0.jpeg', '2017-12-24 06:30:46', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
