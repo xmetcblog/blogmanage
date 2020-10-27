@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Map;
 
-@FeignClient(name = "eureka-articlle")
+@FeignClient(name = "eureka-article")
 public interface ArticleFeign {
 
     @RequestMapping(value = "/article/JsonAricleFindByUid/{uid}", method = RequestMethod.GET)

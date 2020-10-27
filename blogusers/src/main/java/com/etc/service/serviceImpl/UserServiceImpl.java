@@ -1,5 +1,6 @@
 package com.etc.service.serviceImpl;
 
+import com.etc.dao.UserDaoMapper;
 import com.etc.dao.UserDaoRepository;
 import com.etc.entity.User;
 import com.etc.service.UserService;
@@ -13,6 +14,8 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Resource
     UserDaoRepository userDaoRepository;
+    @Resource
+    UserDaoMapper userDaoMapper;
     @Override
     public List<User> findAllUser() {
         return userDaoRepository.findAll();
@@ -24,9 +27,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PageInfo<User> pageUserByCondition(Integer pageNum, Integer pageSize, Integer uid) {
+    public PageInfo<User> pageUserByCondition(Integer pageNum, Integer pageSize,User user) {
         PageHelper.startPage(pageNum,pageSize);
-        List<User> list = userDaoRepository.findAll();
+        List<User> list = userDaoMapper.findAllByCondition(user);
         PageInfo<User> pageInfo =new PageInfo<>(list);
         return pageInfo;
     }

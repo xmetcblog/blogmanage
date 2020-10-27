@@ -9,8 +9,20 @@
     <select id="findAllByCondition" resultType="com.etc.entity.User" >
         select * from user
         <where>
-            <if test="uid!=null and uid!=''">
-                and uid = #{uid}
+            <if test="id!=null and id!=''">
+                and id = #{id}
+            </if>
+            <if test="userName != null and userName != ''">
+                and username = #{userName}
+            </if>
+            <if test="nickName != null and nickName != ''">
+                and nickname = #{nickName}
+            </if>
+            <if test="enabled != null and enabled != ''">
+                and enabled = #{enabled}
+            </if>
+            <if test="role != null and role != ''">
+                and role = #{role}
             </if>
         </where>
     </select>

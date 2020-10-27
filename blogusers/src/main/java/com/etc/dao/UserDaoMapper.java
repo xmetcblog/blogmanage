@@ -8,5 +8,5 @@ import java.util.List;
 
 @Mapper
 public interface UserDaoMapper {
-    List<User> findAllByCondition(@Param("id") Integer id);
+    List<User> findAllByCondition(User user);
 }
