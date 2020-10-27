@@ -9,6 +9,8 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -38,5 +40,13 @@ public class ArticleServiceImpl implements ArticleService {
         List<Article> articles = articleDaoMapper.findAllOrCon(uid);
         PageInfo<Article> pageInfo =new PageInfo<>(articles);
         return pageInfo;
+    }
+
+    @Override
+    public int editArticle(Article article) {
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+        article.setEditTime(timestamp);
+        return articleDaoMapper.updateArticle(article);
     }
 }

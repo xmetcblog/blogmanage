@@ -13,9 +13,8 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@CrossOrigin("*")
 @RestController
-@CrossOrigin
 @RequestMapping("/article")
 public class ArticleController {
 
@@ -57,5 +56,11 @@ public class ArticleController {
                                                  Integer uid){
         PageInfo page = articleService.pageArticleById(pageNum, pageSize, uid);
         return page;
+    }
+
+    //修改文章内容
+    @RequestMapping("/updateArticle")
+    public void updateArticle(Article article){
+
     }
 }

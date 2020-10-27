@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface ArticleDaoRepository extends JpaRepository<Article, Integer>, JpaSpecificationExecutor<Article>, Serializable {
     List<Article> findAllByUid(Integer uid);
+
 }
