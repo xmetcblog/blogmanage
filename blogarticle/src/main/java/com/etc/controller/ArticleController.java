@@ -58,4 +58,10 @@ public class ArticleController {
         PageInfo page = articleService.pageArticleById(pageNum, pageSize, uid);
         return page;
     }
+
+    //修改文章内容
+    @RequestMapping("/updateArticle")
+    public void updateArticle(Article article){
+
+    }
 }

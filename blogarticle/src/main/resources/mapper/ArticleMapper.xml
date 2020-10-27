@@ -15,4 +15,10 @@
         </where>
     </select>
 
+    <update id="updateArticle" parameterType="com.etc.entity.Article">
+        update article
+        set title=#{title}, summary=#{summary}, editTime=#{editTime}
+        where id = #{id}
+    </update>
+
 </mapper>

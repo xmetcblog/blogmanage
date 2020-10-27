@@ -10,4 +10,6 @@ import java.util.List;
 public interface ArticleDaoMapper {
     List<Article> findAllOrCon(@Param("uid") Integer uid);
 
+    //修改文章标题、内容、时间
+    int updateArticle(@Param("article")Article article);
 }

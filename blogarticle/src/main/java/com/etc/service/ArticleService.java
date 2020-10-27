@@ -17,4 +17,7 @@ public interface ArticleService {
 
     //分页查询所有或者用户文章
     public PageInfo<Article> pageArticleById(Integer pageNum, Integer pageSize, Integer uid);
+
+    //修改文章标题、内容、时间
+    public int editArticle(Article article);
 }
