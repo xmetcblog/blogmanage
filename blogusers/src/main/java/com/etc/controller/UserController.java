@@ -53,8 +53,8 @@ public class UserController {
     @RequestMapping("/pageUserByCondition")
     public PageInfo<User> pageUserByCondition(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                                  @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
-                                                 Integer uid){
-        PageInfo page = userService.pageUserByCondition(pageNum, pageSize, uid);
+                                                 User user){
+        PageInfo page = userService.pageUserByCondition(pageNum, pageSize, user);
         return page;
     }
 

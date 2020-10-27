@@ -12,6 +12,6 @@ public interface UserService {
     //登录验证
     User login(String username,String password);
     //分页查询所有或者用户文章
-    public PageInfo<User> pageUserByCondition(Integer pageNum, Integer pageSize, Integer uid);
+    public PageInfo<User> pageUserByCondition(Integer pageNum, Integer pageSize, User user);
 
 }
