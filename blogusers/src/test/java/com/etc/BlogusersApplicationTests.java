@@ -35,6 +35,7 @@ class BlogusersApplicationTests {
     void findUserByUserNameAndPassword(){
         User linghu = userDaoRepository.findUserByUserNameAndPassword("linghu", "123");
         System.out.println(linghu);
+        System.out.println("asddsa");
     }
 
     @Test
