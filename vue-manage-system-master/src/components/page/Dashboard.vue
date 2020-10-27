@@ -6,8 +6,8 @@
                     <div class="user-info">
                         <img :src="userFace" class="user-avator" alt />
                         <div class="user-info-cont">
-                            <div class="user-info-name">{{name}}</div>
-							<div>{{nickName}}</div>
+                            <div class="user-info-name">{{nickName}}</div>
+							<div>{{name}}</div>
                             <div>{{role}}</div>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                 </el-card>
                 <el-card shadow="hover" style="height:252px;">
                     <div slot="header" class="clearfix">
-                        <span>语言详情</span>
+                        <span>文章分类</span>
                     </div>Vue
                     <el-progress :percentage="71.3" color="#42b983"></el-progress>JavaScript
                     <el-progress :percentage="24.1" color="#f1e05a"></el-progress>CSS
@@ -68,7 +68,7 @@
                 </el-row>
                 <el-card shadow="hover" style="height:403px;">
                     <div slot="header" class="clearfix">
-                        <span>备忘录</span>
+                        <span>个人文章列表</span>
                         <el-button style="float: right; padding: 3px 0" type="text">添加</el-button>
                     </div>
                     <el-table :show-header="false" :data="todoList" style="width:100%;">
@@ -87,8 +87,8 @@
                         </el-table-column>
                         <el-table-column width="60">
                             <template>
-                                <i class="el-icon-edit"></i>
-                                <i class="el-icon-delete"></i>
+                                <i class="el-icon-edit"></i><!-- 文章编辑 -->
+                                <i class="el-icon-delete"></i><!-- 文章删除 -->
                             </template>
                         </el-table-column>
                     </el-table>
