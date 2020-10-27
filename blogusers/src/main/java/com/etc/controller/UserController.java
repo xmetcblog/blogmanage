@@ -5,8 +5,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.etc.entity.User;
 import com.etc.feign.ArticleFeign;
 import com.etc.service.UserService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -47,5 +49,16 @@ public class UserController {
         }
         return map;
     }
+
+    @RequestMapping("/pageUserByCondition")
+    public PageInfo<User> pageUserByCondition(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                                                 @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
+                                                 Integer uid){
+        PageInfo page = userService.pageUserByCondition(pageNum, pageSize, uid);
+        return page;
+    }
+
+
+
 }
 

@@ -26,8 +26,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public PageInfo<User> pageUserByCondition(Integer pageNum, Integer pageSize, Integer uid) {
         PageHelper.startPage(pageNum,pageSize);
-
-        return null;
+        List<User> list = userDaoRepository.findAll();
+        PageInfo<User> pageInfo =new PageInfo<>(list);
+        return pageInfo;
     }
 
 }
