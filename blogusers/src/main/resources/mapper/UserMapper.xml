@@ -6,7 +6,7 @@
 <mapper namespace="com.etc.dao.UserDaoMapper">
     <!-- 自定义模糊查找 SQL -->
 
-    <select id="findAllByCondition" resultType="com.etc.entity.User" >
+    <select id="findAllByCondition" resultType="com.etc.entity.User" parameterType="com.etc.entity.User">
         select * from user
         <where>
             <if test="id!=null and id!=''">
