@@ -13,7 +13,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: HL921124
+    password: 123456
     url: jdbc:mysql://127.0.0.1:3306/blogmanage?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
   jpa:
     database: mysql

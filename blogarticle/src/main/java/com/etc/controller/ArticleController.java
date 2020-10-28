@@ -70,4 +70,10 @@ public class ArticleController {
     public void deleteArticle(Integer id){
         articleService.deleteArticle(id);
     }
+
+    //根据文章id查询文章
+    @RequestMapping("/findArticleById")
+    public Article findArticleById(Integer id){
+        return articleService.findArticleByid(id);
+    }
 }

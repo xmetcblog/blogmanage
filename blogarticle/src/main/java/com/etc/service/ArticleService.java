@@ -23,4 +23,7 @@ public interface ArticleService {
 
     //删除文章
     public void deleteArticle(Integer id);
+
+    //根据文章id查询文章
+    public Article findArticleByid(Integer id);
 }
