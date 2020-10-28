@@ -63,4 +63,12 @@ public class ArticleServiceImpl implements ArticleService {
     public Article findArticleByid(Integer id) {
         return articleDaoRepository.findArticleById(id);
     }
+
+    @Override
+    public void addArticle(Article article) {
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+        article.setEditTime(timestamp);
+        articleDaoMapper.insertArticle(article);
+    }
 }

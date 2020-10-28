@@ -47,4 +47,11 @@ public class ArticleTest {
     public void deleteArticle(){
         articleDaoRepository.deleteById(126);
     }
+    //文章添加
+    @Test
+    public void insertArticle(){
+        Article article = new Article();
+        article.setMdContent("asdasdasdas");
+        articleDaoMapper.insertArticle(article);
+    }
 }

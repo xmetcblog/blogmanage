@@ -13,9 +13,9 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@CrossOrigin("*")
 @RestController
 @RequestMapping("/article")
+@CrossOrigin("*")
 public class ArticleController {
 
 /*
@@ -75,5 +75,10 @@ public class ArticleController {
     @RequestMapping("/findArticleById")
     public Article findArticleById(Integer id){
         return articleService.findArticleByid(id);
+    }
+    //添加文章
+    @RequestMapping("addArticle")
+    public void addArticle(Article article){
+        articleService.addArticle(article);
     }
 }
