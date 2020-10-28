@@ -12,4 +12,7 @@ public interface ArticleDaoMapper {
 
     //修改文章标题、内容、时间
     int updateArticle(@Param("article")Article article);
+
+    //根据文章id修改mdContent和htmlContent
+    int updateMdContentAndHtmlContent(@Param("article")Article article);
 }

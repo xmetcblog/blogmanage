@@ -13,9 +13,10 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-@CrossOrigin("*")
+
 @RestController
 @RequestMapping("/article")
+@CrossOrigin("*")
 public class ArticleController {
 
 /*
@@ -76,4 +77,11 @@ public class ArticleController {
     public Article findArticleById(Integer id){
         return articleService.findArticleByid(id);
     }
+
+    //根据文章id修改mdContent和htmlContent
+    @RequestMapping("/updateArticleById")
+    public int updateArticleById(Article article){
+        return articleService.upArticle(article);
+    }
+
 }

@@ -6,6 +6,7 @@ import com.etc.entity.Article;
 import com.etc.service.ArticleService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -62,5 +63,10 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article findArticleByid(Integer id) {
         return articleDaoRepository.findArticleById(id);
+    }
+
+    @Override
+    public int upArticle(Article article) {
+        return articleDaoMapper.updateMdContentAndHtmlContent(article);
     }
 }

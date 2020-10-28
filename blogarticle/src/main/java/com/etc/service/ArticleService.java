@@ -26,4 +26,7 @@ public interface ArticleService {
 
     //根据文章id查询文章
     public Article findArticleByid(Integer id);
+
+    //根据文章id修改文章mdContent和HtmlContent
+    public int upArticle(Article article);
 }

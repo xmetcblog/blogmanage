@@ -21,4 +21,9 @@
         where id = #{article.id}
     </update>
 
+    <update id="updateMdContentAndHtmlContent" parameterType="com.etc.entity.Article">
+        update article
+        set mdContent=#{article.mdContent}, htmlContent=#{article.mdContent}
+        where id = #{article.id}
+    </update>
 </mapper>
