@@ -65,10 +65,13 @@ public class UserController {
     @RequestMapping("/DelUser/{id}")
     public void DelUser(@RequestParam("id") Integer id){
         userService.DelUser(id);
-
     }
+
     @RequestMapping("/UpUserState")
-    public void UpdateUserState(@RequestParam("user") User user){
+    public void UpdateUserState(User user){
+        System.out.println("修改成功");
+        System.out.println(user.getEnabled());
+        System.out.println(user);
         userService.UpUserState(user);
     }
 
