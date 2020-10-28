@@ -58,6 +58,13 @@ public class UserController {
         return page;
     }
 
+    @RequestMapping("/delUser")
+    public void delUser(Integer id){
+        System.out.println("请求成功！");
+        System.out.println(id);
+        userService.delUserByID(id);
+    }
+
 
 
 }

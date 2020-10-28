@@ -34,4 +34,9 @@ public class UserServiceImpl implements UserService {
         return pageInfo;
     }
 
+    @Override
+    public void delUserByID(Integer uid) {
+        userDaoRepository.deleteById(uid);
+    }
+
 }

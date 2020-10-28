@@ -53,8 +53,8 @@ public class ArticleController {
     @RequestMapping("/PageAllArticleOrCon")
     public PageInfo<Article> PageAllArticleOrCon(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                                  @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
-                                                 Integer uid){
-        PageInfo page = articleService.pageArticleById(pageNum, pageSize, uid);
+                                                 @RequestParam(value = "id")Integer id){
+        PageInfo page = articleService.pageArticleById(pageNum, pageSize, id);
         return page;
     }
 
