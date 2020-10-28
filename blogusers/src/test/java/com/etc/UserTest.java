@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @SpringBootTest
 public class UserTest {
@@ -38,6 +39,16 @@ public class UserTest {
         user.setId(25);
         user.setUserName("haugnqin");
         userService.UpUserState(user);
+    }
+
+    @Test
+    public void testSelectCon(){
+        User user = new User();
+        user.setEnabled(1);
+        List<User> list = userDaoMapper.findAllByCondition(user);
+        for (User u :list){
+            System.out.println(u);
+        }
     }
 
 

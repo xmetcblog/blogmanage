@@ -18,7 +18,7 @@
             <if test="nickName != null and nickName != ''">
                 and nickname = #{nickName}
             </if>
-            <if test="enabled != null and enabled != ''">
+            <if test="enabled != null and enabled !='' or enabled == 0">
                 and enabled = #{enabled}
             </if>
             <if test="role != null and role != ''">
