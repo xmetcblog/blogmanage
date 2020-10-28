@@ -1,12 +1,8 @@
 package com.etc.service;
 
-import com.etc.dao.ArticleDaoRepository;
-import com.etc.dao.mapper.ArticleDaoMapper;
 import com.etc.entity.Article;
 import com.github.pagehelper.PageInfo;
-import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 public interface ArticleService {
@@ -29,4 +25,7 @@ public interface ArticleService {
 
     //根据文章id修改文章mdContent和HtmlContent
     public int upArticle(Article article);
+
+    //添加文章
+    void addArticle(Article article);
 }

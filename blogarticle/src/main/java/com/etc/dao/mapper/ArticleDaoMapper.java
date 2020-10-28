@@ -15,4 +15,7 @@ public interface ArticleDaoMapper {
 
     //根据文章id修改mdContent和htmlContent
     int updateMdContentAndHtmlContent(@Param("article")Article article);
+
+    //添加文章
+    void insertArticle(Article article);
 }

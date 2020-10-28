@@ -13,7 +13,6 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 @RestController
 @RequestMapping("/article")
 @CrossOrigin("*")
@@ -84,4 +83,9 @@ public class ArticleController {
         return articleService.upArticle(article);
     }
 
+    //添加文章
+    @RequestMapping("addArticle")
+    public void addArticle(Article article){
+        articleService.addArticle(article);
+    }
 }

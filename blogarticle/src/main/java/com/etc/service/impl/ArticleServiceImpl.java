@@ -66,6 +66,14 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public void addArticle(Article article) {
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+        article.setEditTime(timestamp);
+        articleDaoMapper.insertArticle(article);
+    }
+
+    @Override
     public int upArticle(Article article) {
         return articleDaoMapper.updateMdContentAndHtmlContent(article);
     }
