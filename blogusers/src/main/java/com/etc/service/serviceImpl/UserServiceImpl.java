@@ -9,6 +9,8 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
@@ -40,15 +42,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void UpUserState(User user) {
-
-         userDaoMapper.UpUserState(user);
+    public void modUserByID(User user) {
+        userDaoMapper.updateUser(user);
     }
 
     @Override
-    public void DelUser(Integer id) {
-        userDaoRepository.deleteById(id);
-
+    public void addUser(User user) {
+        Date date = new Date();
+        Timestamp timestamp = new Timestamp(date.getTime());
+        user.setRegTime(timestamp);
+        userDaoMapper.addUser(user);
     }
+
+    @Override
+    public void upUserState(User user) {
+         userDaoMapper.upUserState(user);
+    }
+
 
 }

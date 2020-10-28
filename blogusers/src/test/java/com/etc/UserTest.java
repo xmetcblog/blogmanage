@@ -23,13 +23,16 @@ public class UserTest {
     public void DelUserTest(){
         userDaoRepository.deleteById(21);
     }
-    @Test
-    public void DelUserTest1(){
-        userDaoMapper.DelUser(22);
-    }
+//    @Test
+//    public void DelUserTest1(){
+//        userDaoMapper.DelUser(22);
+//    }
     @Test
     public void DelUserTest2(){
-        userService.DelUser(23);
+        User user = new User();
+        user.setId(6);
+        user.setNickName("令狐冲");
+        userDaoMapper.updateUser(user);
     }
 
     @Test
@@ -38,7 +41,7 @@ public class UserTest {
         user.setEnabled(0);
         user.setId(25);
         user.setUserName("haugnqin");
-        userService.UpUserState(user);
+        userService.upUserState(user);
     }
 
     @Test

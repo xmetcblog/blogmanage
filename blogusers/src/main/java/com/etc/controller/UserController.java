@@ -13,9 +13,10 @@ import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
-@CrossOrigin("*")
+
 @RestController
 @RequestMapping("/login")
+@CrossOrigin("*")
 public class UserController {
     @Resource
     UserService userService;
@@ -62,17 +63,22 @@ public class UserController {
         userService.delUserByID(id);
     }
 
-    @RequestMapping("/DelUser/{id}")
-    public void DelUser(@RequestParam("id") Integer id){
-        userService.DelUser(id);
-    }
-
     @RequestMapping("/UpUserState")
     public void UpdateUserState(User user){
         System.out.println("修改成功");
         System.out.println(user.getEnabled());
         System.out.println(user);
-        userService.UpUserState(user);
+        userService.upUserState(user);
+    }
+
+    @RequestMapping("/updateUser")
+    public void updateUser(User user){
+        userService.modUserByID(user);
+    }
+
+    @RequestMapping("/addUser")
+    public void addUser(User user){
+        userService.addUser(user);
     }
 
 

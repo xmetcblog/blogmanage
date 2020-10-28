@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "user")
@@ -35,7 +36,7 @@ public class User {
     private String userFace;
 
     @Column(name = "regtime")
-    private String regTime;
+    private Timestamp regTime;
 
     @Column(name = "role")
     private Integer role;
