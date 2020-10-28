@@ -39,4 +39,16 @@ public class UserServiceImpl implements UserService {
         userDaoRepository.deleteById(uid);
     }
 
+    @Override
+    public void UpUserState(User user) {
+
+         userDaoMapper.UpUserState(user);
+    }
+
+    @Override
+    public void DelUser(Integer id) {
+        userDaoRepository.deleteById(id);
+
+    }
+
 }

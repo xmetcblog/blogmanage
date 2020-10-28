@@ -9,4 +9,6 @@ import java.util.List;
 @Mapper
 public interface UserDaoMapper {
     List<User> findAllByCondition(User user);
+    boolean DelUser(Integer id);
+    void UpUserState(User user);
 }
