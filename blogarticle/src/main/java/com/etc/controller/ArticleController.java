@@ -60,7 +60,14 @@ public class ArticleController {
 
     //修改文章内容
     @RequestMapping("/updateArticle")
-    public void updateArticle(Article article){
+    public int updateArticle(Integer id, String title){
+        int i = articleService.editArticle(id, title);
+        return i;
+    }
 
+    //删除文章
+    @RequestMapping("/deleteArticle")
+    public void deleteArticle(Integer id){
+        articleService.deleteArticle(id);
     }
 }

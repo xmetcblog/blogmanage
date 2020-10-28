@@ -17,8 +17,8 @@
 
     <update id="updateArticle" parameterType="com.etc.entity.Article">
         update article
-        set title=#{title}, summary=#{summary}, editTime=#{editTime}
-        where id = #{id}
+        set title=#{article.title}, editTime=#{article.editTime}
+        where id = #{article.id}
     </update>
 
 </mapper>

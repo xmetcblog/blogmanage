@@ -43,10 +43,19 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public int editArticle(Article article) {
+    public int editArticle(Integer id, String title) {
+        Article article = new Article();
         Date date = new Date();
         Timestamp timestamp = new Timestamp(date.getTime());
         article.setEditTime(timestamp);
+        article.setId(id);
+        article.setTitle(title);
         return articleDaoMapper.updateArticle(article);
+
+    }
+
+    @Override
+    public void deleteArticle(Integer id) {
+        articleDaoRepository.deleteById(id);
     }
 }

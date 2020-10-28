@@ -19,5 +19,8 @@ public interface ArticleService {
     public PageInfo<Article> pageArticleById(Integer pageNum, Integer pageSize, Integer uid);
 
     //修改文章标题、内容、时间
-    public int editArticle(Article article);
+    public int editArticle(Integer id, String title);
+
+    //删除文章
+    public void deleteArticle(Integer id);
 }
