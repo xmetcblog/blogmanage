@@ -26,5 +26,16 @@
             </if>
         </where>
     </select>
+    <update id="UpUserState" parameterType="com.etc.entity.User">
+        update user set username = #{userName},nickname = #{nickName},password = #{password},enabled = #{enabled},role = #{role} where id = #{id}
+
+    </update>
+
+
+    <delete id="DelUser" parameterType="java.lang.Integer">
+        delete from user where id = #{id}
+
+    </delete>
+
 
 </mapper>

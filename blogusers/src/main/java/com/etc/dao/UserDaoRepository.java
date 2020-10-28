@@ -10,4 +10,5 @@ import java.util.List;
 public interface UserDaoRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User>, Serializable {
     User findUserByUserNameAndPassword(String username,String password);
     List<User> findAll();
+    void deleteById(Integer id);
 }

@@ -6,10 +6,7 @@ import com.etc.entity.User;
 import com.etc.feign.ArticleFeign;
 import com.etc.service.UserService;
 import com.github.pagehelper.PageInfo;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -58,6 +55,15 @@ public class UserController {
         return page;
     }
 
+    @RequestMapping("/DelUser/{id}")
+    public void DelUser(@RequestParam("id") Integer id){
+        userService.DelUser(id);
+
+    }
+    @RequestMapping("/UpUserState")
+    public void UpdateUserState(@RequestParam("user") User user){
+        userService.UpUserState(user);
+    }
 
 
 }

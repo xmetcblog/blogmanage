@@ -34,4 +34,16 @@ public class UserServiceImpl implements UserService {
         return pageInfo;
     }
 
+    @Override
+    public void UpUserState(User user) {
+
+         userDaoMapper.UpUserState(user);
+    }
+
+    @Override
+    public void DelUser(Integer id) {
+        userDaoRepository.deleteById(id);
+
+    }
+
 }

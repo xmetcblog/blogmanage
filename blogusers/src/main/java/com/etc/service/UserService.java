@@ -13,5 +13,7 @@ public interface UserService {
     User login(String username,String password);
     //分页查询所有或者用户文章
     public PageInfo<User> pageUserByCondition(Integer pageNum, Integer pageSize, User user);
+    void UpUserState(User user);
+    void DelUser(Integer id);
 
 }
