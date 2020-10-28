@@ -13,7 +13,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: 123456
+    password: HL921124
     url: jdbc:mysql://127.0.0.1:3306/blogmanage?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT
   jpa:
     database: mysql
@@ -23,3 +23,10 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+pagehelper:
+  helperDialect: mysql
+  #启用合理化，如果pageNum<1会查询第一页，如果pageNum>pages会查询最后一页
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
