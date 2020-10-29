@@ -7,10 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="blogusers" />
         <module name="blogarticle" />
         <module name="blogmanage" />
         <module name="blogcloudcenter" />
-        <module name="blogusers" />
       </profile>
     </annotationProcessing>
   </component>
